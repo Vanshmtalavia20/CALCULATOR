@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCI</title>
+    <style>
+          *{
+            font-size: 25px;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+           }
+.main
+{
+    height: 600px;
+    /* background: lightcoral; */
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input
+{
+    grid-column: span 4;
+    border: 2px solid lightslategray;
+    border-radius: 10px;
+    height: 70px;
+}
+
+.calci
+{
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+}
+.gg
+{
+    padding: 20px;
+    background: thistle;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="calci">
+            <input type="text" name="" id="oo">
+            <div class="gg" onclick="clrall()">AC</div>
+            <div class="gg" onclick="del()">DEL</div>
+            <div class="gg" onclick="jj('%')">%</div>
+            <div class="gg" onclick="jj('/')">/</div>
+
+            <div class="gg" onclick="jj('7')">7</div>
+            <div class="gg" onclick="jj('8')">8</div>
+            <div class="gg" onclick="jj('9')">9</div>
+            <div class="gg" onclick="jj('*')">*</div>
+
+            <div class="gg" onclick="jj('4')">4</div>
+            <div class="gg" onclick="jj('5')">5</div>
+            <div class="gg" onclick="jj('6')">6</div>
+            <div class="gg" onclick="jj('+')">+</div>
+
+            <div class="gg" onclick="jj('1')">1</div>
+            <div class="gg" onclick="jj('2')">2</div>
+            <div class="gg" onclick="jj('3')">3</div>
+            <div class="gg" onclick="jj('-')">-</div>
+
+            <div class="gg" onclick="finalcal()">=</div>
+            <div class="gg" onclick="jj('0')">0</div>
+
+        </div>
+    </div>
+    <script>
+
+        hi = document.getElementById('oo');
+        hi.value=""
+
+
+        function clrall()
+        {
+            hi.value=""
+        }
+
+        function del()
+        {
+            hi.value=hi.value.slice(0,-1);       
+         }
+
+        function jj(w)
+        {
+            console.log(w)
+            hi.value=hi.value + w        
+         }
+
+         function finalcal()
+         {
+            hi.value= eval(hi.value)
+         }
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
